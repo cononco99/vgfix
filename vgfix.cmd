@@ -3,16 +3,13 @@
 @exit /b %ERRORLEVEL%
 # Thanks to ijprest for the scripting trick (https://stackoverflow.com/a/1056231/509928)
 
-# To run from command line, delete lines up to and including this line.
 #!perl
 
 use strict; 
 use warnings;
 use File::Basename;
 
-if ($#ARGV != 0) {
-    die "expected exactly 1 filename argument.";
-}
+($#ARGV == 0) or die "expected exactly 1 filename argument.";
 
 my $input_file=$ARGV[0];
 my($filename, $dirs, $suffix) = fileparse($input_file);
