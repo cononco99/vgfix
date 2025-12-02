@@ -19,7 +19,7 @@ open(INPUT, '<', $input_file) or die "could not open $input_file";
 open(OUTPUT, '>', $output_file) or die "could not open $output_file";
 
 while (<INPUT>) {
-  $_ =~ s/<INCOMETYPE>REINVEST/<INCOMETYPE>DIV/;
+  $_ =~ s/<INCOMETYPE>REINVEST/<INCOMETYPE>DIV/g;
   print OUTPUT;
 }
 
